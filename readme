@@ -1,0 +1,38 @@
+from matplotlib import pyplot as plt
+import random
+
+
+
+endmoney = []
+num1 = 7
+bins = []
+for z in range(1000):
+    money = 100
+
+
+
+
+
+    for i in range(money):
+        numcheck1 = random.randrange(1, 7) + random.randrange(1, 7)
+        if num1 == numcheck1:
+            money = money + 5
+        else:
+            money = money - 1
+
+
+
+
+    endmoney.append(money)
+    bins.append(z)
+
+endmoney.sort()
+print(endmoney)
+print(bins)
+
+plt.hist(endmoney, bins=bins, edgecolor='black')
+
+plt.title("money after betting $100 a 1000 times")
+plt.xlabel("money")
+plt.ylabel("frequency")
+plt.show()
